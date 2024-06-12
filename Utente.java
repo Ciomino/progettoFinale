@@ -3,11 +3,13 @@ package com.example.finalProject;
 
 
 import java.sql.Date;
+import java.util.HashSet;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Utente {
@@ -18,6 +20,10 @@ public class Utente {
     private String email;
     private String password;
     private Date dataDiNascita;
+
+    @OneToMany(mappedBy = "utente")
+    private Set<UserEvent> userEvents = new HashSet<>();
+
     public Long getId() {
         return id;
     }
