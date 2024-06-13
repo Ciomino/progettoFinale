@@ -10,8 +10,7 @@ L'entità ‘Concerto’ è utilizzata per memorizzare dettagli relativi ai conc
 ATTRIBUTI
 -        Id: Identificatore univoco del concerto
 -        Artista: Nome dell’artista che si esibisce al concerto
-Relazioni
-L'entità Concerto estende Evento, quindi eredita tutte le relazioni definite in Evento.
+
 Vincoli
 ·       L'attributo id deve essere univoco e autoincrementato.
 ·       L'attributo artista è obbligatorio.
@@ -28,8 +27,7 @@ ATTRIBUTI
 -        Docente: Nome del docente che conduce il workshop
 -        Ambito: Ambito tematico del workshop
 -        Descrizione: Descrizione del workshop
-Relazioni
-L'entità Workshop estende Evento, quindi eredita tutte le relazioni definite in Evento.
+
 Vincoli
 ·       L'attributo id deve essere univoco e autoincrementato.
 ·       Gli attributi ‘docente’ e ‘ambito’ sono obbligatori.
@@ -49,8 +47,7 @@ ATTRIBUTI
 -        Conduttore: nome del conduttore della conferenza
 -        Ambito: ambito tematico della conferenza
 -        Descrizione: descrizione della conferenza
-Relazioni
-L'entità Conferenza estende Evento, quindi eredita tutte le relazioni definite in Evento.
+
 Vincoli
 ·       L'attributo id deve essere univoco e autoincrementato.
 ·       Gli attributi ‘conduttore e ‘ambito’ sono obbligatori.
@@ -68,8 +65,7 @@ ATTRIBUTI
 -        email (univoca)
 -        password
 -        dataDiNascita
-Relazioni
-Evento: Un utente può prenotare più eventi(relazione uno-a-molti).
+
 Vincoli
 L'attributo email deve essere univoco per ogni cliente.
 L'attributo id deve essere un numero intero positivo e univoco.
@@ -86,9 +82,24 @@ ATTRIBUTI
 -        username
 -        email (univoca)
 -        password
-Relazioni
-Evento: Un admin può modificare, cancellare, aggiungerlo più eventi(relazione uno-a-m).
+
 Vincoli
 L'attributo email deve essere univoco per ogni cliente.
 L'attributo id deve essere un numero intero positivo e univoco.
+
+PRENOTAZIONE
+
+Introduzione
+L'entità Prenotazione rappresenta una prenotazione dell'utente su un evento. 
+Descrizione Generale
+Questa entità serve per mettere in relazione l'utente con le sue prenotazioni. Include informazioni come nome, email,password. Inoltre, un admin può modificare un evento, cancellarlo o aggiungerlo.In più può simulare una prenotazione.
+ATTRIBUTI
+-        Id  (univoco)
+-        IdUtente
+-        tipoEntita
+         
+
+Vincoli
+L'attributo id deve essere un numero intero positivo e univoco.
+
 
