@@ -17,6 +17,7 @@ ATTRIBUTI
 -        Artista: Nome dell’artista che si esibisce al concerto
 
 Vincoli
+
 L'attributo id deve essere univoco e autoincrementato.
 L'attributo artista è obbligatorio.
  
