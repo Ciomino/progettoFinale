@@ -60,14 +60,14 @@ L'entità Utente rappresenta un utente del sistema. Questa entità è essenziale
 Descrizione Generale
 L'entità Utente viene utilizzata per memorizzare i dettagli relativi agli utenti. Include informazioni come nome, email, data di nascita. Inoltre, un utente può prenotare un evento, disdirlo o lasciare un feedback
 ATTRIBUTI
--        Id  (univoco)
--        username
--        email (univoca)
--        password
--        dataDiNascita
+-        Id:identificatore univoco dell'utente
+-        username: identificatore nome utente
+-        email (univoca):identificatore email dell'utente
+-        password:identificatore password dell'utente
+-        dataDiNascita:identificatore data di nascita
 
 Vincoli
-L'attributo email deve essere univoco per ogni cliente.
+L'attributo email deve essere univoco per ogni utente.
 L'attributo id deve essere un numero intero positivo e univoco.
 
  
@@ -78,13 +78,13 @@ L'entità Admin rappresenta un admin del sistema. Questa entità è essenziale p
 Descrizione Generale
 L'entità Admin viene utilizzata per memorizzare i dati relativi agli admin . Include informazioni come nome, email,password. Inoltre, un admin può modificare un evento, cancellarlo o aggiungerlo.In più può simulare una prenotazione.
 ATTRIBUTI
--        Id  (univoco)
--        username
--        email (univoca)
--        password
+-      Id:identificatore univoco dell'admin
+-      username: identificatore nome admin
+-      email (univoca):identificatore email dell'admin
+-      password:identificatore password dell'admin
 
 Vincoli
-L'attributo email deve essere univoco per ogni cliente.
+L'attributo email deve essere univoco per ogni utente.
 L'attributo id deve essere un numero intero positivo e univoco.
 
 PRENOTAZIONE
@@ -94,9 +94,9 @@ L'entità Prenotazione rappresenta una prenotazione dell'utente su un evento.
 Descrizione Generale
 Questa entità serve per mettere in relazione l'utente con le sue prenotazioni. Include informazioni come id dell'utente e tipo di entità per avere la relazione.
 ATTRIBUTI
--        Id  (univoco)
--        IdUtente
--        tipoEntita
+-        Id:identificatore univoco della prenoyazione
+-        IdUtente:identificatore univoco dell'utente
+-        tipoEntita:identificatore del tipo di entità
          
 
 Vincoli
