@@ -17,8 +17,8 @@ ATTRIBUTI
 -        Artista: Nome dell’artista che si esibisce al concerto
 
 Vincoli
-·       L'attributo id deve essere univoco e autoincrementato.
-·       L'attributo artista è obbligatorio.
+L'attributo id deve essere univoco e autoincrementato.
+L'attributo artista è obbligatorio.
  
    
 WORKSHOP
@@ -40,8 +40,8 @@ ATTRIBUTI
 
 Vincoli
 
-·       L'attributo id deve essere univoco e autoincrementato.
-·       Gli attributi ‘docente’ e ‘ambito’ sono obbligatori.
+L'attributo id deve essere univoco e autoincrementato.
+Gli attributi ‘docente’ e ‘ambito’ sono obbligatori.
  
  
  
@@ -66,8 +66,8 @@ ATTRIBUTI
 
 Vincoli
 
-·       L'attributo id deve essere univoco e autoincrementato.
-·       Gli attributi ‘conduttore e ‘ambito’ sono obbligatori.
+L'attributo id deve essere univoco e autoincrementato.
+Gli attributi ‘conduttore e ‘ambito’ sono obbligatori.
 
 
 UTENTE
@@ -131,6 +131,7 @@ ATTRIBUTI
          
 
 Vincoli
+
 L'attributo id deve essere un numero intero positivo e univoco.
 
 
