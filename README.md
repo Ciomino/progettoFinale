@@ -92,7 +92,7 @@ PRENOTAZIONE
 Introduzione
 L'entità Prenotazione rappresenta una prenotazione dell'utente su un evento. 
 Descrizione Generale
-Questa entità serve per mettere in relazione l'utente con le sue prenotazioni. Include informazioni come nome, email,password. Inoltre, un admin può modificare un evento, cancellarlo o aggiungerlo.In più può simulare una prenotazione.
+Questa entità serve per mettere in relazione l'utente con le sue prenotazioni. Include informazioni come id dell'utente e tipo di entità per avere la relazione.
 ATTRIBUTI
 -        Id  (univoco)
 -        IdUtente
