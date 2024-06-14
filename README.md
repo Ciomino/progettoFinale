@@ -4,6 +4,7 @@ Spring Security è un potente framework di autenticazione e controllo degli acce
 
 ### Configurazione
 Aggiungi le dipendenze necessarie nel tuo pom.xml:
+```xml
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
