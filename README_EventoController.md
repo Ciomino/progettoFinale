@@ -22,7 +22,7 @@ UtenteController gestisce le richieste HTTP relative alla gestione del sito. For
 #### showAddEventForm
 - **Descrizione:** Visualizza il form di aggiunta di un evento
 - **Parametri:** `@RequestParam("type") String type`: il tipo di evento.
--                 `Model model`: L'oggetto del modello è utilizzato per passare dati alla vista.
+- **Parametri:**`Model model`: L'oggetto del modello è utilizzato per passare dati alla vista.
 - **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare, torna alla pagina del login (redirect:/login).
 
 #### showLoginForm
