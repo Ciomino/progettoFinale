@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Event List</title>
+</head>
+
+<body>
+    <h1>Event List</h1>
+    <div>
+        <a sec:authorize="hasRole('ADMIN')" th:href="@{/events/add?type=concerto}">Add Concerto</a>
+        <a sec:authorize="hasRole('ADMIN')" th:href="@{/events/add?type=conferenza}">Add Conferenza</a>
+        <a sec:authorize="hasRole('ADMIN')" th:href="@{/events/add?type=workshop}">Add Workshop</a>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="event : ${events}">
+                    <td th:text="${event.nome}"></td>
+                    <td th:text="${event.descrizione}"></td>
+                    <td>
+                        <a sec:authorize="hasRole('ADMIN')" th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+                        <a sec:authorize="hasRole('ADMIN')" th:href="@{/events/delete/{id}(id=${event.id})}">Delete</a>
+                        <!-- Mostra il link "Prenota" solo agli utenti non amministratori -->
+                        <a sec:authorize="hasRole('USER')" th:href="@{/events/prenota/{id}(id=${event.id})}">Prenota</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+

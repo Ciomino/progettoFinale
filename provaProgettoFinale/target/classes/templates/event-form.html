@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Form</title>
+</head>
+<body>
+    <h1>Event Form</h1>
+    <form th:action="@{/events}" th:object="${evento}" method="post">
+        <div>
+            <label>Nome:</label>
+            <input type="text" th:field="*{nome}" />
+        </div>
+        <div>
+            <label>Data:</label>
+            <input type="date" th:field="*{data}" />
+        </div>
+        <div>
+            <label>Orario:</label>
+            <input type="time" th:field="*{orario}" />
+        </div>
+        <div>
+            <label>Luogo:</label>
+            <input type="text" th:field="*{luogo}" />
+        </div>
+        <div>
+            <label>Durata:</label>
+            <input type="number" th:field="*{durata}" />
+        </div>
+        <div>
+            <label>Capienza:</label>
+            <input type="number" th:field="*{capienza}" />
+        </div>
+        <div>
+            <label>Prenotati:</label>
+            <input type="number" th:field="*{prenotati}" />
+        </div>
+        <div>
+            <label>Prezzo:</label>
+            <input type="number" step="0.01" th:field="*{prezzo}" />
+        </div>
+        <div>
+            <label>Feedback:</label>
+            <input type="text" th:field="*{feedback}" />
+        </div>
+        <div th:if="${evento.getClass().getSimpleName() == 'Concerto'}">
+            <label>Artista:</label>
+            <input type="text" th:field="*{artista}" />
+        </div>
+        <div th:if="${evento.getClass().getSimpleName() == 'Conferenza'}">
+            <label>Relatore:</label>
+            <input type="text" th:field="*{relatore}" />
+        </div>
+        <div th:if="${evento.getClass().getSimpleName() == 'Workshop'}">
+            <label>Argomento:</label>
+            <input type="text" th:field="*{argomento}" />
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</body>
+</html>
