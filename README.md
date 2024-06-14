@@ -20,7 +20,7 @@ Aggiungi le dipendenze necessarie nel tuo pom.xml:
     </dependency>
     <!-- Aggiungi altre dipendenze se necessario -->
 </dependencies>
-
+```
 
 ### Requisiti
 - Java 11 o successivo
