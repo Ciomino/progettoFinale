@@ -135,4 +135,28 @@ Vincoli
 
 L'attributo id deve essere un numero intero positivo e univoco.
 
+Evento
 
+Introduzione
+
+L'entità Evento rappresenta un evento generico a cui un utente si può prenotare. 
+
+Descrizione Generale
+
+Questa entità è una classe astratta contiene le informazioni sugli eventi generiche e i metodi di modifica aggiunta e cancellazione degli eventi.Utilizza l'annotazione @inherited per dare @Entity alle classi figlie:Concerto,Workshop,Conferenza
+ATTRIBUTI
+-        Id:identificatore univoco dell evento
+-        nome:identificatore del nome dell'evento
+-        data:identificatore della data dell'evento
+-        orario: identificatore dell'orario dell'evento
+-        luogo:identificatore del luogo dell'evento
+-        durata: identificatore della durata dell'evento
+-        capienza: identificatore della capienza dell'evento
+-        prenotati: identificatore che indica quanti eventi sono stati prenotati
+-        prezzo: identificatore del prezzo dell'evento
+-        feedback:identificatore feedback scritto sull'evento
+         
+
+Vincoli
+
+L'attributo id deve essere un numero intero positivo e univoco.
