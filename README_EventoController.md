@@ -1,7 +1,7 @@
 # progettoFinale
 
-## UtenteController
-UtenteController gestisce le richieste HTTP relative alla gestione del sito. Fornisce endpoint per visualizzare il login, il form di registrazione, processare i dati, permette all’utente di prenotare o disdire un evento. Permette di cercare un evento per categoria, nome e data.
+## EventoController
+EventoController gestisce le richieste HTTP relative alla gestione del sito. Fornisce endpoint per visualizzare la lista degli eventi, il form di aggiunta degli eventi, processa i dati, permette all’utente di prenotare o disdire un evento.
 
 ### Annotazioni
 - **@Controller:** Indica che la classe è un controller Spring MVC.
@@ -23,33 +23,50 @@ UtenteController gestisce le richieste HTTP relative alla gestione del sito. For
 - **Descrizione:** Visualizza il form di aggiunta di un evento
 - **Parametri:** `@RequestParam("type") String type`: il tipo di evento.
 - **Parametri:**`Model model`: L'oggetto del modello è utilizzato per passare dati alla vista.
-- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare, torna alla pagina del login (redirect:/login).
+- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare, torna alla pagina del login (event-form.html).
+-  **Dettagli:** C'è uno switch che sceglie il tipo di evento
 
 #### showLoginForm
 - **Descrizione:** Visualizza il form di registrazione.
 - **Parametri:** `Model model`: L'oggetto del modello è utilizzato per passare dati alla vista.
 - **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (login.html).
 
-#### login
-- **Descrizione:** Visualizza il form di login con un collegamento alla registrazione dell’account se devi registrarti.
+#### addEvent
+- **Descrizione:**Aggiunge un evento alla lista.
 - **Parametri:** `Model model`: L'oggetto del modello è utilizzato per passare dati alla vista.
-- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (login).
-- **Dettagli:** Aggiunge un nuovo oggetto Utente al modello, che sarà legato ai campi del form nella vista login.html.
+- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (redirect:/events).
+- **Dettagli:** Salva l'evento nella lista.
 
-#### cancellazionePrenotazione
-- **Descrizione:** Permette di eliminare una prenotazione effettuato da un utente.
-- **Parametri:** _Work in progress_
-- **Ritorna:** _Work in progress_
-- **Dettagli:** Elimina il campo nel database e attiva una nuova prenotazione. _Work in progress_
+#### showEditEventForm
+- **Descrizione:** Visualizza il form di modifica evento.
+- **Parametri:** `Model model`: L'oggetto del modello è utilizzato per passare dati alla vista.
+- **Parametri:**:`@PathVariable("id") Long id`:l'id dell'evento.
+- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (event-form.html).
 
-#### prenotazione
-- **Descrizione:** Crea una nuova prenotazione di un evento.
-- **Parametri:** _Work in progress_
-- **Ritorna:** _Work in progress_
-- **Dettagli:** Aggiunge un nuovo
 
+#### updateEvent
+-**Descrizione:**  Modifica l'evento.
+- **Parametri:** `@ModelAttribute Evento evento`: L'oggetto evento utilizzato per passare dati alla vista.
+- **Parametri:**:`@PathVariable("id") Long id`:l'id dell'evento.
+- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (redirect:/events).
+
+#### deleteEvent
+-**Descrizione:**  Cancella un evento.
+- **Parametri:**:`@PathVariable("id") Long id`:l'id dell'evento.
+- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (redirect:/events).
+
+#### bookEvent
+-**Descrizione:**  Prenota un evento.
+- **Parametri:**:`@PathVariable("id") Long id`:l'id dell'evento.
+- **Ritorna:** `String`: Il nome del template Thymeleaf da visualizzare (redirect:/events).
+
+
+
+
+
+  
 ### View
 
-- **login.html**
-- **register.html**
-- **home.html**
+- **event-list.html**
+- **event-form.html**
+  
